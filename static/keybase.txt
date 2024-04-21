@@ -1,0 +1,86 @@
+==================================================================
+https://keybase.io/cstamas
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.cstamas.org
+  * I am cstamas (https://keybase.io/cstamas) on keybase.
+  * I have a public key with fingerprint 2BE1 3D05 2E9A A567 D657  D979 1FD5 0715 4FB9 BA39
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101dd49737968a2c1af39bd26352ab34c7fcc6b1cb27808dccb7badab2dbe8333b10a",
+      "fingerprint": "2be13d052e9aa567d657d9791fd507154fb9ba39",
+      "host": "keybase.io",
+      "key_id": "1fd507154fb9ba39",
+      "kid": "0101dd49737968a2c1af39bd26352ab34c7fcc6b1cb27808dccb7badab2dbe8333b10a",
+      "uid": "3fc318e545c5f37eed4cbf4492d2b119",
+      "username": "cstamas"
+    },
+    "merkle_root": {
+      "ctime": 1620307818,
+      "hash_meta": "20f2dc14b444a6e3eb0d9924a0125a3f3c143fa68a2ff9771cb502cf5f10cbf2",
+      "seqno": 19854027
+    },
+    "revoke": {
+      "sig_ids": [
+        "ce3d0bfbc77111cf14e5377ef0d4fb5107c452babae31f798c4c443fa50576a80f"
+      ]
+    },
+    "service": {
+      "hostname": "www.cstamas.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1620307821,
+  "expire_in": 157680000,
+  "prev": "4a056f84b8f4b3f51c522bbf32e4e345c002890a5a5ae75c2517828f75ca749f",
+  "seqno": 51,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtU3tQVUUcviBEogWhgpbgeIZeE+Kex95zDk4+GrUYRgsq09Cuu3t24crl3ss5
+94Je5kJOmUCDz8A78dAxNZG0LNHJspx8awqkk2TW+MgKbYQBa3yUtofRaabpz87+
+cc7ufr/v+37fnl3xwCBHfFTtwf6O1u87UqKOdWPH/NU9S8oF7DMWCVnlQhEdeFGP
+Qa2Aq8htCFkCEIFoGIquyqru1JBERMRkHRuSU4YSwrJCVEaIE4sES6oGNIMQrGJk
+ICwZmGqyLGMRICFDYG5vATX9ptsb4LQSpqJsAChRHSHoVA0nVA1d1UVmQKCKUGFY
+x0jWeWGhz7IruDmMLJrp9vE1PnEN2PsP/P/sOzhAJzMiixqFCiSQySqlhkIwUxRd
+MiQsirZu0KKmFxVTjiZWABUjSwhnCMXULPJQl+nzBexsScBtI0SnBGSgaqLG+0NW
+oauYBpAdC2CSQUQFK4qCnFSmGBi6LikIiBJEMpP5nsyQ3RBjuqpy9xBIhEEmAu5H
+4jYsWuL1cQVdgwqQVG7BpKW+ImqrW+4CHpslZOULhMrG3hDADBNOI4qEiQqFsqpS
+BgyeJhSBShQoYYQRlUWm6hpRiGKrQwBVJ9IAE+aFbT2z1E0G6O2TuptAWVlZ5t0U
+Mn1mAfflN30BH/F5+GZhIOC3sux0Aov8A2iKXXd5XNjtNfivwitKqWm5fV7eC0f+
+KzhJzBDoQr/bpC63jeCONMAfW4eWckoeGXQyTcEaU7DMoEigJGHMZIkqVObHCICk
+6QBBPqgKiQRFzqox/olURWf/JAm5VAAVcE4enxcFgiYVwvHV0XKMIyrekZo8Nqa/
+M3/5jRVPxP6Y8/P2e9crNtq+W474wYn3VmB1wl9jLqz/ydH+Qt3FEBzRE0d0Ovtm
+7u0yq/Hp9Tdb+xK7yzdNipU7c7QdOLj0seTUhuuNW0+SipTBdbu+2rj4SFL/xNVn
+q0Yrp1Y9/Gbw0vyxN0Ym7YzU1LaVNvaE1lxNe8QKZh7o75js3W1+Udj01Na99c9l
+R46H9sSXnrlPnSJcCaXXrTp9al0kffzyFz+IuRiqpWmiHkl5+Wrv5n2VcyaoW8LL
+iP/KR+/nt/7ZMbmra0vXurk/+N/YOAm+Cs4+eLxioYxntZxt+ez5bS+NnvlbyScn
+105beeLAtakXK2N7Yoqlc91PHs3eM7Rvf2/08CWvjz58U98+p6Pum82pzx6G5ZWu
+/Fc+7a02SkYVLX5vfMWo67g5e0b0Q4M2fPk4nnH147aVmxoPZXwnXU6e5ojadbvq
+UG34tTvTTy94Jz22vne7sRzkLjj3a25TbnfLmIaRcRcmNqevOX+ywaxsm566au0f
+1UHniVu9lQmD9i8qb2tcennO/a3VOxs6F3vO5IK4cdUl7bfzzHXucbtnhoM14aTh
+Q/qOJOUnzhvmyVw7tH5l1qX63s/n9p3PaXr33KOFwqyOITC7OcYzzDXs2+lj97WD
+5mPJTS21Nw7m7T16rSJyYgSJ5OX98qGetqkee46n+bdtS3imZl/w/JC3Qsuqdk65
+VV/V2fh2e0Lh1OuzeyboO+78XrN1Wkpa5OuSyyBvQ1dr3N8=
+=xm+w
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cstamas
+
+==================================================================
+
