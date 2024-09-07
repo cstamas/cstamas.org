@@ -18,11 +18,11 @@ plugins in "Maven ecosystem" that rely on some sort of "compatibility" layers (a
 [Eclipse Sisu](https://github.com/eclipse-sisu/sisu-project) is fully functional and in charge since 
 Maven 3.1.0 (released in 2013, when last missing piece, support for "sisu index" was added). Maven project during it's 
 existence did pile up some of the debts, or in other words, "moved past" some well known libraries. 
-Plexus DI Container and Wagon most notable examples.
+Plexus DI Container and Wagon being the most notable examples.
 
 ## The Problem
 
-The Plexus DI Container is from the Plexus umbrella project. Plexus project consists of MANY subprojects: the 
+The Plexus DI Container is from the Plexus umbrella project. Plexus project consists of **many** subprojects: the 
 "die hard" `plexus-utils`, Plexus DI container, Plexus Compilers, Plexus Interactivity, and so on, and so on.
 But let's focus on Plexus DI.
 
@@ -73,6 +73,6 @@ reason.
 ## Prepare for the Future
 
 Maven 4 will come with its own API (more about it in some later post), but one fact stands: the 
-Maven DI (new in 4) resembles the JSR330, **not the Plexus DI (with all the XML and stuff)**.
+Maven DI (new in 4) **resembles the JSR330, not the Plexus DI (with all the XML and stuff)**.
 
 Basically, just do yourself a favor, and move from Plexus DI to JSR330 now. You will thank me later.
