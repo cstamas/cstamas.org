@@ -162,7 +162,7 @@ public class P2InstallableUnitLifecycleMappingProvider extends LifecycleMappingP
 And we add the following Java Properties file to the same package where class above is. The "binary name" of 
 the properties file should be `org/eclipse/tycho/maven/plugin/P2InstallableUnitLifecycleMappingProvider.properties`:
 
-```
+```properties
 validate=org.eclipse.tycho:tycho-packaging-plugin:${project.version}:build-qualifier,\
   org.eclipse.tycho:tycho-packaging-plugin:${project.version}:validate-id,\
   org.eclipse.tycho:tycho-packaging-plugin:${project.version}:validate-version
