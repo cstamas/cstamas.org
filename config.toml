@@ -31,6 +31,13 @@ pygmentsUseClasses = true
     section = ["JSON", "HTML"]
 
 [[menu.main]]
+    identifier = "contact"
+    # name = "Blog" #If display text link, cancel comment out
+    pre = "<span>Contact</span>" #Choose your favorite font from Font Awesome
+    url = "/blog/"
+    weight = 10
+
+[[menu.main]]
     identifier = "blog"
     # name = "Blog" #If display text link, cancel comment out
     pre = "<span>Blog</span>" #Choose your favorite font from Font Awesome
