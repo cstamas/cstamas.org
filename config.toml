@@ -7,6 +7,9 @@ pygmentsCodefences = true
 pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
 
+[markup.goldmark.renderer]
+  unsafe= true
+
 [taxonomies]
   series = "series"
 
@@ -18,8 +21,9 @@ pygmentsUseClasses = true
   error404 = "There is no such page. Move along..."
   description = """
   Resurrecting killed applications...<br/>
-  and having fun.<br/>
+  and having fun!<br/>
   Proximity, Nexus, Maven and others...
+  
   """
   publicationYear = "2024."
   # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
@@ -43,48 +47,6 @@ pygmentsUseClasses = true
     pre = "<i class='fa-brands fa-microblog fa-2xl' title='Blog'></i>"
     url = "/blog/"
     weight = 20
-
-[[menu.main]]
-    identifier = "linkedin"
-    # name = "LinkedIn"
-    pre = "<i class='fa-brands fa-linkedin fa-2xl' title='LinkedIn'></i>"
-    url = "https://www.linkedin.com/in/cservenak"
-    weight = 30
-
-[[menu.main]]
-    identifier = "twitter"
-    # name = "Twitter"
-    pre = "<i class='fa-brands fa-twitter fa-2xl' title='Twitter'></i>"
-    url = "https://twitter.com/cstamas"
-    weight = 40
-
-[[menu.main]]
-    identifier = "mastodon"
-    # name = "Twitter"
-    pre = "<i class='fa-brands fa-mastodon fa-2xl' title='Mastodon'></i>"
-    url = "https://mastodon.online/@cstamas"
-    weight = 50
-
-[[menu.main]]
-    identifier = "bluesky"
-    # name = "Twitter"
-    pre = "<i class='fa-brands fa-bluesky fa-2xl' title='BlueSky'></i>"
-    url = "https://bsky.app/profile/cstamas.bsky.social"
-    weight = 60
-
-[[menu.main]]
-    identifier = "github"
-    # name = "GitHub"
-    pre = "<i class='fa-brands fa-github fa-2xl' title='Github'></i>"
-    url = "https://github.com/cstamas"
-    weight = 70
-
-[[menu.main]]
-    identifier = "gitlab"
-    # name = "GitLab"
-    pre = "<i class='fa-brands fa-gitlab fa-2xl' title='Gitlab'></i>"
-    url = "https://gitlab.com/tcservenak"
-    weight = 80
 
 [[menu.main]]
     identifier = "email"
