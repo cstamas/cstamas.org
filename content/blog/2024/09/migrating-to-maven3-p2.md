@@ -13,7 +13,7 @@ series:
   - Maven
 ---
 
-This is just for myself and others, to not get forgotten...
+A small fable for myself and others...
 
 The Takari [Polyglot Maven 0.7.1](https://github.com/takari/polyglot-maven/releases/tag/polyglot-0.7.1) was released not
 so long ago, and it contained one trivial change, this [pull request](https://github.com/takari/polyglot-maven/pull/319).
@@ -47,7 +47,7 @@ Later, when Java 1.5 came with generics, Plexus got the handy new method:
   <T> T lookup(Class<T> klazz, String roleHint);
 ```
 
-And it made things great, no need to cast! But under the hud, labels were still only labels. You made them explicit either
+And it made things great, no need to cast! But under the hood, labels were still only labels. You made them explicit either
 via `components.xml` that accepted the `role` and `roleHint` or via annotations like this
 
 ```java
@@ -112,6 +112,7 @@ Great "literature" to skim over:
 * [Javadoc of DefaultModelProcessor](https://github.com/apache/maven/blob/4c059c401ca95cee8c63b3737223ade1dbe9f934/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelProcessor.java#L36-L60)
 
 Remember: you are completely fine as long you keep things simple. The fact **you see one interface does not mean
-you have one role**! You need to look into hierarchy as well. 
+you have one role**! You need to look into hierarchy as well. While moving from Plexus DI to JSR330, this is one
+of the keystones to keep in mind.
 
 Enjoy!
