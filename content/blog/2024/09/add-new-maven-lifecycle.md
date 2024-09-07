@@ -159,7 +159,8 @@ import javax.inject.Singleton;
 public class P2InstallableUnitLifecycleMappingProvider extends LifecycleMappingProviderSupport {}
 ```
 
-And we add the following Java Properties file (to the same package where class above is):
+And we add the following Java Properties file to the same package where class above is. The "binary name" of 
+the properties file should be `org/eclipse/tycho/maven/plugin/P2InstallableUnitLifecycleMappingProvider.properties`:
 
 ```
 validate=org.eclipse.tycho:tycho-packaging-plugin:${project.version}:build-qualifier,\
