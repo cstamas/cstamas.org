@@ -123,6 +123,21 @@ nav li {
   right: 10px;
 }
 
+#taxonomy {
+  font-weight: bold;
+  font-size: 16px;
+  list-style: none;
+}
+
+#taxonomy ul {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
 #searchResults {
   display: none;
   position: absolute;
@@ -167,15 +182,20 @@ nav li {
   list-style: none;
 }
 
+#tags li {
+  font-size: 12px;
+  text-decoration: none;
+}
+
 #tags li a {
-  display: block;
+  display: inline;
   height: 24px;
   margin: 5px;
   padding: 0 5px;
   background-color: #dddfdf;
   border-radius: 5px;
-  font-size: 14px;
-  /* text-decoration: none; */
+  font-size: 12px;
+  text-decoration: none;
 }
 
 #contentsList {

@@ -10,9 +10,38 @@
   {{ if .Param "tags" }}
   <div id="tags">
     <ul>
+      <li>Tags</li>
       {{ range .Param "tags" }}
         {{ $name := . }}
         {{ with $.Site.GetPage (printf "/tags/%s" ($name | urlize)) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  <!-- categories -->
+  {{ if .Param "categories" }}
+  <div id="tags">
+    <ul>
+      <li>Categories:</li>
+      {{ range .Param "categories" }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/categories/%s" ($name | urlize)) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  <!-- series -->
+  {{ if .Param "series" }}
+  <div id="tags">
+    <ul>
+      <li>Series:</li>
+      {{ range .Param "series" }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/series/%s" ($name | urlize)) }}
           <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
         {{ end }}
       {{ end }}

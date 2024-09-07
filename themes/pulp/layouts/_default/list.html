@@ -11,7 +11,26 @@
   <!-- tags -->
   <div id="tags">
     <ul>
+      <li>Tags:</li>
       {{ range .Site.Taxonomies.tags.ByCount }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <!-- categories -->
+  <div id="tags">
+    <ul>
+      <li>Categories:</li>
+      {{ range .Site.Taxonomies.categories.ByCount }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <!-- series -->
+  <div id="tags">
+    <ul>
+      <li>Series:</li>
+      {{ range .Site.Taxonomies.series.ByCount }}
         <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
       {{ end }}
     </ul>

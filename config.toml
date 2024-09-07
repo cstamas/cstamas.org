@@ -11,6 +11,8 @@ pygmentsUseClasses = true
   unsafe= true
 
 [taxonomies]
+  tag = "tags"
+  category = "categories"
   series = "series"
 
 [params]
@@ -23,7 +25,6 @@ pygmentsUseClasses = true
   Resurrecting killed applications...<br/>
   and having fun!<br/>
   Proximity, Nexus, Maven and others...
-  
   """
   publicationYear = "2024."
   # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
