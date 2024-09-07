@@ -1,6 +1,6 @@
 ---
 title: "How to add new Maven lifecycle mapping"
-date: 2024-09-07
+date: 2024-09-07T14:55:22+01:00
 draft: false
 categories:
   - Blog

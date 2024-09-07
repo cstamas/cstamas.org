@@ -1,6 +1,6 @@
 ---
 title: "Quo Vadis Maven?"
-date: 2024-09-07
+date: 2024-09-07T13:55:22+01:00
 draft: false
 categories:
   - Blog
