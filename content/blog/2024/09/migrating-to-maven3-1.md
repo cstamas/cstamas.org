@@ -22,7 +22,9 @@ Plexus DI Container and Wagon being the most notable examples.
 
 ## The Problem
 
-The Plexus DI Container is from the Plexus umbrella project. Plexus project consists of **many** subprojects: the 
+The Plexus DI Container is from the Plexus umbrella project that started on great 
+[Codehaus](https://github.com/codehaus/www-codehaus-org/blob/master/app/history.md) (and **do smile** while you read this). 
+Plexus project consists of **many** subprojects: the 
 "die hard" `plexus-utils`, Plexus DI container, Plexus Compilers, Plexus Interactivity, and so on, and so on.
 But let's focus on Plexus DI.
 
