@@ -2,7 +2,7 @@ baseurl = "https://www.cstamas.org/"
 title = "cstamas.org"
 theme = "pulp"
 canonifyurls = true
-hasCJKLanguage = true
+hasCJKLanguage = false
 pygmentsCodefences = true
 pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
@@ -31,50 +31,64 @@ pygmentsUseClasses = true
     section = ["JSON", "HTML"]
 
 [[menu.main]]
-    identifier = "contact"
-    # name = "Blog" #If display text link, cancel comment out
-    pre = "<span>Contact</span>" #Choose your favorite font from Font Awesome
-    url = "/blog/"
+    identifier = "about"
+    # name = "About" #If display text link, cancel comment out
+    pre = "<i class='fa-solid fa-address-card fa-2xl' title='About'></i>"
+    url = "/about/"
     weight = 10
 
 [[menu.main]]
     identifier = "blog"
     # name = "Blog" #If display text link, cancel comment out
-    pre = "<span>Blog</span>" #Choose your favorite font from Font Awesome
+    pre = "<i class='fa-brands fa-microblog fa-2xl' title='Blog'></i>"
     url = "/blog/"
-    weight = 10
+    weight = 20
 
 [[menu.main]]
     identifier = "linkedin"
     # name = "LinkedIn"
-    pre = "<i class='fab fa-linkedin fa-lg'></i>"
+    pre = "<i class='fa-brands fa-linkedin fa-2xl' title='LinkedIn'></i>"
     url = "https://www.linkedin.com/in/cservenak"
-    weight = 20
+    weight = 30
 
 [[menu.main]]
     identifier = "twitter"
     # name = "Twitter"
-    pre = "<i class='fab fa-twitter fa-lg'></i>"
+    pre = "<i class='fa-brands fa-twitter fa-2xl' title='Twitter'></i>"
     url = "https://twitter.com/cstamas"
-    weight = 30
+    weight = 40
+
+[[menu.main]]
+    identifier = "mastodon"
+    # name = "Twitter"
+    pre = "<i class='fa-brands fa-mastodon fa-2xl' title='Mastodon'></i>"
+    url = "https://mastodon.online/@cstamas"
+    weight = 50
+
+[[menu.main]]
+    identifier = "bluesky"
+    # name = "Twitter"
+    pre = "<i class='fa-brands fa-bluesky fa-2xl' title='BlueSky'></i>"
+    url = "https://bsky.app/profile/cstamas.bsky.social"
+    weight = 60
 
 [[menu.main]]
     identifier = "github"
     # name = "GitHub"
-    pre = "<i class='fab fa-github fa-lg'></i>"
+    pre = "<i class='fa-brands fa-github fa-2xl' title='Github'></i>"
     url = "https://github.com/cstamas"
-    weight = 40
+    weight = 70
 
 [[menu.main]]
     identifier = "gitlab"
     # name = "GitLab"
-    pre = "<i class='fab fa-gitlab fa-lg'></i>"
-    url = "https://gitlab.com/tamascs"
-    weight = 50
+    pre = "<i class='fa-brands fa-gitlab fa-2xl' title='Gitlab'></i>"
+    url = "https://gitlab.com/tcservenak"
+    weight = 80
 
 [[menu.main]]
     identifier = "email"
     # name = "Email"
-    pre = "<i class='fa fa-envelope fa-lg'></i>"
+    pre = "<i class='fa fa-at fa-2xl' title='e-mail'></i>"
     url = "mailto:tamas@cservenak.net"
-    weight = 60
+    weight = 90
