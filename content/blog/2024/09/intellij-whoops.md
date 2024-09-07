@@ -5,7 +5,6 @@ draft: false
 categories:
   - Blog
 tags:
-  - idea
   - intellij
 series:
   - Rant
