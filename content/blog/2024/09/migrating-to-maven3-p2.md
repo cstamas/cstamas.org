@@ -52,15 +52,15 @@ via `components.xml` that accepted the `role` and `roleHint` or via annotations 
 
 ```java
 @Component(role=Component.class, roleHint="my")
-public class ComponentImpl implements Component {}
+public class MyComponent implements Component {}
 ```
 
 You explicitly stated here: "class ComponentImpl is keyed by role=`Component.class` and roleHint=`'my'`". One thing
-you could not do in Plexus, is to reach for implementation directly: there was role `ComponentImpl.class`!
+you could not do in Plexus, is to reach for implementation directly: there was no role `MyComponent.class`!
 
 ```java
 @Requirement
-private ComponentImpl componentImpl;
+private MyComponent component;
 ```
 
 ## Sisu enters the chat
@@ -72,15 +72,15 @@ can infer many of these things by just doing this:
 ```java
 @Singleton
 @Named("my")
-public class ComponentImpl implements Component {}
+public class MyComponent implements Component {}
 ```
 
-And this component can be injected into series of places: those wanting `Component` but also those wanting `ComponentImpl`.
+And this component can be injected into series of places: those wanting `Component` but also those wanting `MyComponent`.
 So **Sisu can do, wile Plexus DI cannot**, is to make injection happen like this:
 
 ```java
 @Inject
-private ComponentImpl componentImpl;
+private MyComponent component;
 ```
 
 Why is that? As Sisu figures out _effective type of injection point_ and then matches the published ones with it.
@@ -99,7 +99,8 @@ But wait a second, how does `ModelProcessor` look like? Oh, it looks like this:
 public interface ModelProcessor extends ModelLocator, ModelReader {}
 ```
 
-And there **are components** published implementing `ModelLocator` and `ModelReader` as well! Basically, `ModelProcessor` 
+And there **are components** published implementing [`ModelLocator`](https://github.com/apache/maven/blob/4c059c401ca95cee8c63b3737223ade1dbe9f934/maven-model-builder/src/main/java/org/apache/maven/model/locator/DefaultModelLocator.java) and 
+[`ModelReader`](https://github.com/apache/maven/blob/4c059c401ca95cee8c63b3737223ade1dbe9f934/maven-model-builder/src/main/java/org/apache/maven/model/io/DefaultModelReader.java) as well! Basically, `ModelProcessor` 
 implementation **can be injected** into spots needing `ModelLocator` or `ModelReader` as well (as they are type 
 compatible)!
 
