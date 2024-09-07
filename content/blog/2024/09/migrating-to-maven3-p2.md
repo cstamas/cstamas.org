@@ -111,6 +111,7 @@ Great "literature" to skim over:
 * [Many times overlooked Eclipse Sisu website](https://eclipse-sisu.github.io/sisu-project/).
 * [Javadoc of DefaultModelProcessor](https://github.com/apache/maven/blob/4c059c401ca95cee8c63b3737223ade1dbe9f934/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelProcessor.java#L36-L60)
 
-Remember: you are completely fine as long you keep things simple.
+Remember: you are completely fine as long you keep things simple. The fact **you see one interface does not mean
+you have one role**! You need to look into hierarchy as well. 
 
 Enjoy!
