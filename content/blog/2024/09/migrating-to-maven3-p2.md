@@ -28,7 +28,7 @@ working when in `lib/ext`, so I released 0.7.1.
 But then, as you can see from [first PR long comment thread](https://github.com/takari/polyglot-maven/pull/319), a bug report flew in from none else 
 then [Eclipse Tycho](https://github.com/takari/polyglot-maven/issues/321).
 
-So what happened? And home comes Plexus in the story?
+So what happened? And how comes Plexus in the story?
 
 ## The Plexus "way" (of components)
 
@@ -47,7 +47,7 @@ Later, when Java 1.5 came with generics, Plexus got the handy new method:
   <T> T lookup(Class<T> klazz, String roleHint);
 ```
 
-And it made things great, no need to cast! But under the hud, labels were only labels. You made them explicit either
+And it made things great, no need to cast! But under the hud, labels were still only labels. You made them explicit either
 via `components.xml` that accepted the `role` and `roleHint` or via annotations like this
 
 ```java
@@ -55,8 +55,8 @@ via `components.xml` that accepted the `role` and `roleHint` or via annotations 
 public class ComponentImpl implements Component {}
 ```
 
-You explicitly stated here: "class ComponentImpl is keyed by role=`Component.class` and roleHint='my'". One thing
-you could not do in Plexus: reach for implementation directly:
+You explicitly stated here: "class ComponentImpl is keyed by role=`Component.class` and roleHint=`'my'`". One thing
+you could not do in Plexus, is to reach for implementation directly: there was role `ComponentImpl.class`!
 
 ```java
 @Requirement
@@ -65,8 +65,8 @@ private ComponentImpl componentImpl;
 
 ## Sisu enters the chat
 
-So far good. But in Eclipse Sisu on other hand things are **slightly different**. Sisu uses Guice
-[JIT binding](https://github.com/google/guice/wiki/JustInTimeBindings) generated on the fly. This means that Sisu
+So far good. But in Eclipse Sisu on other hand things are **slightly different** and many times overlooked. Sisu uses Guice
+[JIT/implicit bindings](https://github.com/google/guice/wiki/JustInTimeBindings) generated on the fly. This means that Sisu
 can infer many of these things by just doing this:
 
 ```java
@@ -85,7 +85,7 @@ private ComponentImpl componentImpl;
 
 Why is that? As Sisu figures out _effective type of injection point_ and then matches the published ones with it.
 But this has also some drawbacks as well... especially if you cannot keep things simple. And how comes Polyglot here?
-Well, Maven Core is not kept simple. The original problem was this:
+Well, Maven Core, for sure is not kept simple. The original problem was this implementation:
 
 ```java
 @Singleton
@@ -93,13 +93,13 @@ Well, Maven Core is not kept simple. The original problem was this:
 public class TeslaModelProcessor implements ModelProcessor {}
 ```
 
-But what is `ModelProcessor`? Oh, it looks like this:
+But wait a second, how does `ModelProcessor` look like? Oh, it looks like this:
 
 ```java
 public interface ModelProcessor extends ModelLocator, ModelReader {}
 ```
 
-Oh, and there **are components** implementing `ModelLocator` and `ModelReader` as well! Basically, `ModelProcessor` 
+And there **are components** published implementing `ModelLocator` and `ModelReader` as well! Basically, `ModelProcessor` 
 implementation **can be injected** into spots needing `ModelLocator` or `ModelReader` as well (as they are type 
 compatible)!
 
@@ -109,5 +109,7 @@ But, the `@Typed` annotation comes with some implications as well...
 Great "literature" to skim over:
 * [Many times overlooked Eclipse Sisu website](https://eclipse-sisu.github.io/sisu-project/).
 * [Javadoc of DefaultModelProcessor](https://github.com/apache/maven/blob/4c059c401ca95cee8c63b3737223ade1dbe9f934/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelProcessor.java#L36-L60)
+
+Remember: you are completely fine as long you keep things simple.
 
 Enjoy!
