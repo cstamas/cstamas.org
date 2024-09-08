@@ -102,7 +102,7 @@ In any case, it allows unfettered access to Resolver APIs. Also, important to me
 
 That above means a difference as well: for example packaging plugins **are not injected** when using MIMA in standalone 
 mode (as that part of Model Builder is done by components that reside in `maven-core`). But again, MIMA offers 
-Resolver APIs, that is **about _dependencies_ and not about _building_**. If you want building, use Maven.
+Resolver APIs, that is **about _Artifacts_ and not about _building of theirs_**. If you want building, use Maven.
 
 Despite the name, **MIMA is not Maven**, is just a piece of it.
 
