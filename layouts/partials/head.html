@@ -46,8 +46,7 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
   <![endif]-->` | safeHTML }}
 
-  <!-- MathJax -->
-  {{ if or .Params.math .Site.Params.math }}
-    {{ partial "mathjax_support.html" . }}
+  {{ if .Param "math" }}
+  {{ partialCached "math.html" . }}
   {{ end }}
 </head>

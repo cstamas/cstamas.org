@@ -33,15 +33,36 @@ Moreover, Maven 3.9.x itself (for various reasons) **prevents you from creating 
 that is, when you run embedded in Maven as a Maven Plugin or Build or Core extension. All Maven versions offered you 
 its own Resolver, just inject it!
 
+## (Trying to Re)use Resolver
+
 [Resolver](https://github.com/apache/maven-resolver) itself may look like a respectable code base, but it is
 **incomplete**. Resolver was envisioned as "generic" and "reusable", hence Resolver itself does not
 contain any traces of "models", as in reading "metadata", discovering "versions" and so on. In fact, to make
 Resolver complete, you must implement several components of it, that are not implemented in Resolver itself.
-So to say, Resolver alone is "incomplete",  to "complete" Resolver, Maven implements the missing components
+Resolver alone is incomplete even at object graph level (lacking implementations). To "complete" Resolver, Maven implements the missing components
 in [`maven-resolver-provider`](https://github.com/apache/maven/tree/maven-3.9.x/maven-resolver-provider/)
 subproject, but alas, this subproject depends on [`maven-model-builder`](https://github.com/apache/maven/tree/maven-3.9.x/maven-model-builder)
 subproject, as one can expect, Resolver to interpret POMs, needs fully built (and profile activated) models,
-**even if Resolver itself never even touches POMs/Maven Models**.
+**even if Resolver itself never even touches POMs/Maven Models**. Resolver have no idea about the syntax nor the
+real contents of Maven POM.
+
+Maven **roughly, very roughly** looks like this, where "Artifacts" block should be more like "Artifact Collection, 
+Resolution, Transport (and more)".
+
+```mermaid
+block-beta
+  columns 8
+  Maven:8
+  Classloading:2 DI:2 Projects:2 Artifacts:2
+  Classworlds:2 Sisu:2 ProjectBuilder ModelBuilder:2 Resolver
+```
+
+Again, **roughly** the "Classloading" deals with classpath isolations of Maven Core, Extensions, Plugins and Projects, 
+for more [see here](http://takari.io/book/91-maven-classloading.html). The "DI" block is dealing with Dependency
+Injection. The "Projects" deals with "your POMs", and building (or whatever you do) of them. Finally, the "Artifacts"
+block deals with, well, "Artifacts" (external ones but also yours as well, once built, like installing or deploying them). 
+Maveniverse MIMA covers the lower right side of this diagram, basically the "Artifacts" only. Do notice though, 
+that "ModelBuilder" is **shared** between "Projects" and "Artifacts".
 
 The "MIni MAven" project was conceived when I realized how all the existing solutions to "reuse Maven Resolver" were
 incomplete, or "non-aligned" at least. When I went over some of the most notable users of
@@ -51,18 +72,18 @@ Resolver, like [JBoss Shrinkwrap Resolver](https://github.com/shrinkwrap/resolve
 even if not dully copied and pasted, but clearly the intent was very the same, is repeated over and over again, 
 with all of their own bugs, shortcomings, "not yet implemented" and everything as one can expect.
 
-## MIMA to the rescue
+## MiB
 
 Goals of MIMA are following:
-* offer access to Resolver APIs (and Resolver APIs **only**) wherever you are
-* step in instead of Maven if Maven is "not there", basically offer you "user environment" as Maven would pick up,
-  like honor user `settings.xml`, decrypt passwords in it if needed, etc. 
+* offer access to Resolver APIs (as [defined here](https://maven.apache.org/resolver/api-compatibility.html)) wherever you are
+* step in instead of Maven if Maven is not "present", basically offer you "user environment" as Maven would create,
+  like honor user `settings.xml`, decrypt passwords if needed, etc. 
 
-In general, MIMA wants to be more like "man in black", but instead of aliens, it deals with providing you
-"full Resolver experience" whether you run "embedded in Maven" (ie Maven Plugin or Extension) or "standalone"
-(outside of Maven).
+In general, MIMA wants to be more like "Man in Black", present but not seen (am alluding to movie if anyone have any doubts), 
+but instead of aliens, it deals with providing you "full Resolver experience" whether you run "embedded in Maven" 
+(ie Maven Plugin or Extension) or "standalone" (outside of Maven).
 
-MIMA allows you to do this:
+MIMA allows you to code like this:
 
 ```java
         ContextOverrides overrides = ContextOverrides.create().build();
@@ -74,20 +95,25 @@ MIMA allows you to do this:
 ```
 
 It basically offers you pretty much the same experience whether you run "embedded" in Maven or "standalone" in CLI.
-In any case, it allows unfettered access to Resolver APIs. In short MIMA offers Resolver access "up to `maven-core`".
+MIMA merely tries to "hide" from you from where `RepositorySystem` and `RepositorySystemSession` comes from. From Maven?
+Or did MIMA just create one for you? Don't care about it.
 
-That above means a difference: packaging plugins for example **are not injected** when using MIMA in standalone mode (as that part
-of Model Builder is done by component that resides in `maven-core`). But again, MIMA offers Resolver APIs, that is
-**about _dependencies_ and not about _building_**. If you want building, use Maven of course.
+In any case, it allows unfettered access to Resolver APIs. Also, important to mention, MIMA offers Resolver access "up to `maven-core`".
 
-Despite the name, **MIMA is not Maven**.
+That above means a difference as well: for example packaging plugins **are not injected** when using MIMA in standalone 
+mode (as that part of Model Builder is done by components that reside in `maven-core`). But again, MIMA offers 
+Resolver APIs, that is **about _dependencies_ and not about _building_**. If you want building, use Maven.
 
-About Maven 4, MIMA and the future, we still have to see how things fit together. But just to drive your insanity, here
-are few facts:
+Despite the name, **MIMA is not Maven**, is just a piece of it.
+
+## MIMA and Maven 4
+
+About Maven 4, MIMA and the future, we still have to see how things fit together. But just to drive your fantasies, here
+are listed few possibilities:
 * We have Resolver 1.x and Resolver 2.x (that are pretty much [binary compatible](https://maven.apache.org/resolver/upgrading-resolver.html))
 * We have Maven 3.x and Maven 4.x, they use Resolver 1.x and Resolver 2.x respectively.
-* Wild combos are [possible](https://github.com/maveniverse/mima/issues/65), as MIMA offers "**Resolver APIs only**" such as
-  * Resolver 1.x + Maven 3 `maven-resolver-provider` (and deps) => this is MIMA 2.x
-  * Resolver 2.x + Maven 3 `maven-resolver-provider` (and deps, thanks to binary compatibility) => ?
-  * Resolver 2.x + Maven 4 => ?
-  * Maven 4 API, but that "hides" Resolver completely and unsure what MIMA can do here
+* Wild combos are [possible](https://github.com/maveniverse/mima/issues/65), such as
+  * Resolver 1.x + Maven 3 `maven-resolver-provider` (and deps) => **this is MIMA 2.x**
+  * Resolver 2.x + Maven 3 `maven-resolver-provider` (and deps, thanks to binary compatibility) => Theoretically could work, but who would need this?
+  * Resolver 2.x + Maven 4 => This [may be **MIMA 3.x**](https://github.com/maveniverse/mima/pull/28)
+  * **BUT** Maven 4 API "hides" Resolver completely, and is also able to work "standalone", and am really unsure do we need MIMA at all?

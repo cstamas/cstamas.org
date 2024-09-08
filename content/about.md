@@ -5,8 +5,9 @@ draft: false
 ---
 
 Tamás Cservenák entered OSS development on Apache Maven at 2005. as author of the first "real" (as we know them today) Maven Repository Manager, 
-called Proximity. Later was the lead developer of Nexus 1/2 (upscaled Proximity) at Sonatype, with over 15 years of experience developing 
-software systems in Public Services, Telco and Publishing industries. He is OSS enthusiast, committer on multiple OSS projects. 
+called Proximity. Later was the lead developer of Nexus 1.x and 2.x (those were both based on Proximity) at Sonatype, 
+with over 20 years of experience developing software systems in Public Services, Telco and Publishing industries. 
+He is OSS enthusiast, committer on multiple OSS projects. 
 
 He gained BSc grade in CS at University of Szeged (Hungary), and still actively collaborates with Department of Software Development.
 
