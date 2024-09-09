@@ -63,4 +63,8 @@ bytecode version). To see these, you can use `-Dsisu.debug`.
 On related node, recent Sisu versions introduced this flag: https://github.com/eclipse-sisu/sisu-project/pull/98
 Also, latest Maven 4.0.x comes with this flag enabled.
 
+PS: Just to be clear, do NOT go back to Plexus XML. Plexus allows only default constructor for start (hence, have much
+simpler job to do). Sisu "introspection" is really minimal, is figuring out which constructor needs to be bound, 
+and if one still uses field injection, which those fields are.
+
 Enjoy!
