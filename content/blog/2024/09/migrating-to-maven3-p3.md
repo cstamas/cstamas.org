@@ -60,6 +60,9 @@ components, and you claim support for:
 The problem is, that Sisu will silently swallow issues related to "not able to glean" the component (due unsupported
 bytecode version). To see these, you can use `-Dsisu.debug`.
 
+Hence, the ideal thing you can do, if you develop Plugins or Extensions that declare "minimum supported Maven version"
+is to also compile to that bytecode level as well. Otherwise, you must pay attention and follow this table.
+
 On related node, recent Sisu versions introduced this flag: https://github.com/eclipse-sisu/sisu-project/pull/98
 Also, latest Maven 4.0.x comes with this flag enabled.
 
