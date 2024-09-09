@@ -67,4 +67,6 @@ PS: Just to be clear, do NOT go back to Plexus XML. Plexus allows only default c
 simpler job to do). Sisu "introspection" is really minimal, is figuring out which constructor needs to be bound, 
 and if one still uses field injection, which those fields are.
 
+PPS: This above is true only for "pure JSR330" components, it does **not** stand for Maven Plugins.
+
 Enjoy!
