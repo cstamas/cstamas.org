@@ -90,7 +90,7 @@ That's really the high level picture. CLIng itself is "layered" in a sense of di
 requirements per layer. Various `Parsers` support various CLI options, so parsers are layered
 as:
 * `BaseParser` parses ["common" Maven-tool options](https://github.com/apache/maven/blob/8d4f455ac9f29904bb2c86847d41c310782fbea6/api/maven-api-cli/src/main/java/org/apache/maven/api/cli/Options.java)
-* `MavenParser` extends `BaseParser` and parses ["maven" CLI options](https://github.com/apache/maven/blob/8d4f455ac9f29904bb2c86847d41c310782fbea6/api/maven-api-cli/src/main/java/org/apache/maven/api/cli/mvn/MavenOptions.java)
+* `MavenParser` extends `BaseParser` and parses ["mvn" CLI options](https://github.com/apache/maven/blob/8d4f455ac9f29904bb2c86847d41c310782fbea6/api/maven-api-cli/src/main/java/org/apache/maven/api/cli/mvn/MavenOptions.java)
 * of course, one can have other parsers as well, like ["mvnenc" CLI options parser](https://github.com/apache/maven/blob/8d4f455ac9f29904bb2c86847d41c310782fbea6/api/maven-api-cli/src/main/java/org/apache/maven/api/cli/mvnenc/EncryptOptions.java)
 
 The idea is that all these "specialization" build upon previous layer, in this case
@@ -129,7 +129,19 @@ where [CLIng is really "just reused"](https://github.com/apache/maven-mvnd/pull/
 PR, release of Maven and Maven Daemon can really happen "in sync" as latest `rc-1` release 
 proved. Also, we got first tool in Maven Tools suite, the `mvnenc`.
 
-Finally, IT wise, we introduced `impl/maven-executor` module as well. It is a dependency-less
-module that is reusable and is amalgam of good old `maven-verifier` and `maven-invoker` but do
-the job less intrusive and are future-proof, in a way they do not play smart. Also executor
-supports embedded invocation of both, Maven3 and Maven4.
+Finally, for integration tests, we introduced `impl/maven-executor` module with similar design
+as CLIng has. It is a dependency-less library that is reusable and is amalgam of good old 
+`maven-verifier` and `maven-invoker` but do the job less intrusive and in a future-proof way.
+Maven Executor has 4 key bits:
+* embedded executor - that invokes Maven installation in an isolated classloader 
+  (a la Verifier "embedded" mode). Supports both Maven3 and Maven4.
+* forked executor - a generic tool to invoke any executable (so not only `mvn`).
+* helper - that offers "smart routing" between embedded and forked executor based 
+  on execution request and preferences.
+* tool - that exposes some queries from used Maven installation. Required for future,
+  for example to be able to use "split local repository" and alike.
+
+The Maven Integration Tests already contained own "extended Verifier" instance that extended
+the old `maven-verifier` Verifier class. The redirection happened in `maven-it-helper` 
+"extended Verifier", by dropping `maven-verifier` and `maven-shared-utils` dependencies,
+and introducing `maven-executor` instead. Very few ITs were harmed in this process.
