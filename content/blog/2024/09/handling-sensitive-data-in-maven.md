@@ -95,3 +95,5 @@ Hence, Maven4 will always try to get the master password from your configured so
 On CI you can make it a "secret" and pass over via environment variable, while on workstation
 you can (and should) hook it into `pinentry` or `gpg-agent` that usually provide integrations
 with host OS keychains as well.
+
+Maven4 password encryption is handled by the new CLI tool: `mvnenc`.
