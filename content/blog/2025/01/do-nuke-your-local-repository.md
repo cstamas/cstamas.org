@@ -134,3 +134,25 @@ builder go remote:
 https://asciinema.org/a/696902
 
 There are still rough edges, but for now I intentionally keep everything dead simple.
+
+Update: Version 0.1.0 is released and is on Maven Central! To use it, either add to project in file `.mvn/extensions.xml`
+or, if using Maven 4, you can make it user-wide extension by adding it to `~/.m2/extensions.xml`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+    <extension>
+        <groupId>eu.maveniverse.maven.mimir</groupId>
+        <artifactId>extension3</artifactId>
+        <version>0.1.0</version>
+    </extension>
+</extensions>
+```
+
+To publish your local cache on LAN, [download publisher from here](https://repo.maven.apache.org/maven2/eu/maveniverse/maven/mimir/node/jgroups/0.1.0/jgroups-0.1.0-cli.jar) and run it:
+
+```
+$ java -jar jgroups-0.1.0-cli.jar
+```
+
+To stop it, use Ctrl+C in console.
