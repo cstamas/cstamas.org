@@ -17,9 +17,9 @@ He gained BSc grade in CS at University of Szeged (Hungary), and still actively 
 <a href="https://www.linkedin.com/in/cservenak"><i class='fa-brands fa-linkedin fa-2xl' title='LinkedIn'></i></a>
 <a href="https://mastodon.online/@cstamas"><i class='fa-brands fa-mastodon fa-2xl' title='Mastodon.online'></i></a>
 <a href="https://bsky.app/profile/cstamas.bsky.social"><i class='fa-brands fa-bluesky fa-2xl' title='Bluesky.social'></i></a>
-<a href="https://github.com/cstamas"><i class='fa-brands fa-github fa-2xl' title='Github'></i></a>
-<a href="https://gitlab.com/tcservenak"><i class='fa-brands fa-gitlab fa-2xl' title='Gitlab'></i></a>
-<a href="https://codeberg.org/cstamas"><i class='fa-brands fa-codeberg fa-2xl' title='Codeberg'></i></a>
+<a href="https://github.com/cstamas"><i class='fa-brands fa-git fa-2xl' title='Github'></i></a>
+<a href="https://gitlab.com/tcservenak"><i class='fa-brands fa-git fa-2xl' title='Gitlab'></i></a>
+<a href="https://codeberg.org/cstamas"><i class='fa-brands fa-git fa-2xl' title='Codeberg'></i></a>
 
 
 ---

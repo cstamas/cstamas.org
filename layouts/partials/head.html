@@ -23,7 +23,7 @@
   {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "style-dark.css" | resources.Minify | resources.Fingerprint }}
   <!-- dark enable/disable: remove "disabled" below -->
   <link disabled rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.1.0/css/all.css">
 
   <!-- custom css -->
   {{ range .Site.Params.custom_css }}
