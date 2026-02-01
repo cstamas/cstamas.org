@@ -51,15 +51,24 @@ pygmentsUseClasses = true
     weight = 10
 
 [[menu.main]]
-    identifier = "blog"
-    # name = "Blog" #If display text link, cancel comment out
-    pre = "<i class='fa-brands fa-microblog fa-2xl' title='Blog'></i>"
-    url = "/blog/"
-    weight = 20
-
-[[menu.main]]
     identifier = "email"
     # name = "Email"
-    pre = "<i class='fa fa-at fa-2xl' title='e-mail'></i>"
+    pre = "<i class='fa-solid fa-envelope fa-2xl' title='e-mail'></i>"
     url = "mailto:tamas@cservenak.net"
-    weight = 90
+    weight = 20
+    
+[[menu.main]]
+    identifier = "blog"
+    # name = "Blog" #If display text link, cancel comment out
+    pre = "<i class='fa-solid fa-book fa-2xl' title='Blog'></i>"
+    url = "/blog/"
+    weight = 30
+    
+[[menu.main]]
+    identifier = "Maveniverse"
+    # name = "Blog" #If display text link, cancel comment out
+    pre = "<i class='fa-solid fa-gears fa-2xl' title='Maveniverse'></i>"
+    url = "https://maveniverse.eu/"
+    weight = 40
+
+
