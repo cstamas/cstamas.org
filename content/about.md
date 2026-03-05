@@ -4,14 +4,19 @@ title: "About"
 draft: false
 ---
 
-I entered OSS development with ASF Maven at 2005. as author of the first "real" (as we know them today) Maven Repository Manager, 
-called Proximity. Later was the lead developer of Sonatype Nexus 1.x and 2.x (those were both based on Proximity) at Sonatype. 
-Having about 20 years of experience developing software systems in Public Services, Telco and Publishing industries. 
-Am OSS enthusiast, and am contributor or maintainer on multiple OSS projects. 
+I entered open source software development with Apache Maven in 2005, as author
+of the first "real" (as we know them today) Maven repository manager, called
+Proximity. Later I was the lead developer of Sonatype Nexus 1.x and 2.x, both
+based on Proximity, at Sonatype. With over 20 years of experience developing
+software systems in the public service, telecommunications and publishing
+industries, I am an OSS enthusiast, and contributor or maintainer of multiple
+OSS projects.
 
-Gained BSc grade in CS at University of Szeged (Hungary), and am still actively collaborating with Department of Software Development.
+My education includes BSc in Computer Science at the University of Szeged
+(Hungary) and I am still actively collaborating with the Department of Software
+Development.
 
-My CV is available at [LinkedIn](https://www.linkedin.com/in/cservenak) and a much shorter PDF is [here](/cv/cstamas-cv-2026-03.pdf).
+My full CV is available at [LinkedIn](https://www.linkedin.com/in/cservenak) and as a shorter [PDF here](/cv/cstamas-cv-2026-03.pdf).
 
 ---
 
