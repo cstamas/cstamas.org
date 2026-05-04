@@ -18,6 +18,9 @@ Development.
 
 My full CV is available at [LinkedIn](https://www.linkedin.com/in/cservenak) and as a shorter [PDF here](/cv/cstamas-cv-2026-03.pdf).
 
+My current interest is Apache Maven and related projects, as can be seen
+on [Maveniverse](https://maveniverse.eu/).
+
 ---
 
 #### Find me on various sites as
