@@ -16,7 +16,7 @@ My education includes BSc in Computer Science at the University of Szeged
 (Hungary) and I am still actively collaborating with the Department of Software
 Development.
 
-My full CV is available at [LinkedIn](https://www.linkedin.com/in/cservenak) and as a shorter [PDF here](/cv/cstamas-cv-2026-03.pdf).
+My full CV is available at [LinkedIn](https://www.linkedin.com/in/cservenak) and as a shorter [PDF here](/cv/cstamas-cv-2026-11.pdf).
 
 My current interest is Apache Maven and related projects, as can be seen
 on [Maveniverse](https://maveniverse.eu/).
